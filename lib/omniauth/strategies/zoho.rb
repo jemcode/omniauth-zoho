@@ -10,10 +10,6 @@ module OmniAuth
           :token_url     => '/oauth/v2/token'
       }
 
-      option authorize_params: {
-          :access_type => 'online'
-      }
-
       option provider_ignores_state: true
 
       uid{ raw_info['id'] }
