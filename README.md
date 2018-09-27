@@ -8,7 +8,7 @@ Zoho OAuth2 Strategy for OmniAuth 1.0 to access Zoho services such as ZohoCRM.
 Add to your `Gemfile`:
 
 ```ruby
-gem 'omniauth-zoho'
+gem 'omniauth-zoho', github: 'msnider/omniauth-zoho'
 ```
 
 Then `bundle install`.
