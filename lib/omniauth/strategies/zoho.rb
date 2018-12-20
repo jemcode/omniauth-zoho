@@ -7,7 +7,8 @@ module OmniAuth
       option :client_options, {
           :site          => 'https://accounts.zoho.com',
           :authorize_url => '/oauth/v2/auth',
-          :token_url     => '/oauth/v2/token'
+          :token_url     => '/oauth/v2/token',
+          :access_type   => 'offline'
       }
 
       option provider_ignores_state: true
