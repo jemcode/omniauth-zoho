@@ -7,11 +7,14 @@ module OmniAuth
       option :client_options, {
           :site          => 'https://accounts.zoho.com',
           :authorize_url => '/oauth/v2/auth',
-          :token_url     => '/oauth/v2/token',
-          :access_type   => 'offline'
+          :token_url     => '/oauth/v2/token'
       }
 
       option provider_ignores_state: true
+
+      def authorize_params
+        super.merge(access_type: request.params["access_type"])
+      end
 
       private
 
