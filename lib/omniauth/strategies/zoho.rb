@@ -15,6 +15,14 @@ module OmniAuth
       def authorize_params
         super.merge(access_type: request.params["access_type"])
       end
+      
+      credentials do
+        hash = {"token" => access_token.token}
+        hash.merge!("refresh_token" => access_token.refresh_token) if access_token.expires? && access_token.refresh_token
+        hash.merge!("expires_at" => Time.now.to_i + 3600)
+        hash.merge!("expires" => true)
+        hash
+      end
 
       private
 
